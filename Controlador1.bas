@@ -1275,7 +1275,6 @@ End Sub
 Sub Timer1_Tick
 	Log("Timer ticked!")
 	DoAllStuff
-	' Add your code here to execute on each tick
 End Sub
 
 Sub DoAllStuff
@@ -1307,12 +1306,3 @@ Sub DoAllStuff
 	
 	
 End Sub
-
-'Sub Activity_Resume
-'   Timer1.Enabled = True ' Resume the timer if activity resumes
-'End Sub
-'
-'Sub Activity_Pause (UserClosed As Boolean)
-'   Timer1.Enabled = False ' Stop the timer when activity pauses
-'End Sub
-

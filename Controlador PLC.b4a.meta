@@ -13,6 +13,6 @@ ModuleClosedNodes1=5,6
 ModuleClosedNodes2=
 ModuleClosedNodes3=
 ModuleClosedNodes4=1
-NavigationStack=Controlador1,PanelLeer2_Touch,377,0,Controlador1,PanelEscribir1_Touch,381,6,Controlador1,Graph_Click,539,6,Visual Designer,Controlador1.bal,-100,6,Controlador1,Globals,120,6,Controlador1,Process_Globals,11,0,Controlador1,ConnectPLC_Click,1256,6,Controlador1,Activity_Create,384,6,Controlador1,Timer1_Tick,1273,0,Controlador1,DoAllStuff,1280,6
+NavigationStack=Controlador1,PanelLeer2_Touch,377,0,Controlador1,PanelEscribir1_Touch,381,6,Controlador1,Graph_Click,539,6,Visual Designer,Controlador1.bal,-100,6,Controlador1,Globals,120,6,Controlador1,Process_Globals,11,0,Controlador1,Activity_Create,384,6,Controlador1,ConnectPLC_Click,1228,6,Controlador1,Timer1_Tick,1270,0,Controlador1,DoAllStuff,1297,6
 SelectedBuild=0
 VisibleModules=4,1
