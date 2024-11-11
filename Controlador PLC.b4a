@@ -1,0 +1,200 @@
+﻿Build1=Default,b4a.example
+File1=Controlador1.bal
+File2=Controlador1.txt
+File3=Layout.bal
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+Group=Default Group
+Library1=animation
+Library2=core
+Library3=modbustcp
+Library4=runtimepermissions
+Library5=xui
+Library6=xchart
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33"/>~\n~<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>~\n~<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Controlador1
+Module2=Controlador2
+Module3=Controlador3
+Module4=Starter
+NumberOfFiles=3
+NumberOfLibraries=6
+NumberOfModules=4
+Version=12.5
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Controlador PLC
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+
+	
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	
+	Dim ListControllers As ListView
+	Dim ListC() As String
+	Dim InfoDCA As Label
+	
+	Private btnSave As Button
+	Private btnLoad As Button
+	
+	Private r As RuntimePermissions
+	
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	
+	
+	ListControllers.Initialize("ListControllers")
+	ListControllers.Color = Colors.DarkGray
+	ListControllers.FastScrollEnabled = True
+	
+	InfoDCA.Initialize("InfoDCA")
+	InfoDCA.Text = "CONTROLADOR DE PLC ® DESARROLLADO DENTRO DE LAS INSTALACIONES DE DCA"
+	InfoDCA.TextColor = Colors.White
+	
+	ListC = Array As String("Controlador1", "Controlador2", "Controlador3", "Controlador4", "Controlador5", "Controlador6", "Controlador7", "Controlador8", "Controlador9", "Controlador10" )
+	
+	For Each Name As String In ListC
+		ListControllers.AddTwoLines(Name, "Controlador")
+	Next
+	
+	Activity.AddView(ListControllers, 0%x,0%y, 100%x, 490dip)
+	Activity.AddView(InfoDCA, 25%x, 70%y, 70%x, 100dip)
+	
+	
+'	btnSave.Initialize("btnSave")
+'	btnSave.Text = "Save to File"
+'	Activity.AddView(btnSave, 10dip, 10dip, 150dip, 50dip)
+'
+'	btnLoad.Initialize("btnLoad")
+'	btnLoad.Text = "Load from File"
+'	Activity.AddView(btnLoad, 10dip, 70dip, 150dip, 50dip)
+	
+	
+	
+End Sub
+
+'Sub btnSave_LongClick
+'	'''CLEAN TEXT
+'	Dim textToSave As String = ""
+'	File.WriteString(File.DirInternal, FileName1, textToSave) ' Write text to file
+'	ToastMessageShow("File saved!", True)
+'	
+'	
+'End Sub
+'
+'
+'Sub btnSave_Click
+'	
+'	If Not (File.Exists(File.DirAssets, FileName1)) Then
+'		If File.Exists(File.DirInternal, FileName1) Then
+'			Log("Existe")
+'			Dim Writer As TextWriter
+'			Writer.Initialize(File.OpenOutput(File.DirInternal,FileName1,True))
+'			Writer.WriteLine("BoxCollider")
+'			Writer.WriteLine("Overlap")
+'			Writer.Close
+'			Return
+'		Else
+'			File.Copy(File.DirAssets, FileName1, File.DirInternal, FileName1)
+'			Dim textToSave As String = "Hello, this is a sample text!"
+'			File.WriteString(File.DirInternal, FileName1, textToSave) ' Write text to file
+'			ToastMessageShow("File saved!", True)
+'		End If
+'	End If
+'	
+'	
+''	If File.Exists(File.DirDefaultExternal,"File1.txt")=False Then
+''	Writer.Initialize(File.OpenOutput(File.DirDefaultExternal,"File1.txt",True))
+''	Writer.WriteLine(NewLine)
+''	Writer.Close
+'	
+'	
+'End Sub
+'
+'Sub btnLoad_Click
+'	If File.Exists(File.DirInternal, FileName1) Then
+'		Dim loadedText As String = File.ReadString(File.DirInternal, FileName1) ' Read text from file
+'		Log(loadedText) ' Display the loaded text
+'	Else
+'		ToastMessageShow("File does not exist!", True)
+'	End If
+'End Sub
+'
+'Sub btnLoad_LongClick
+'	If File.Exists(File.DirInternal, FileName1) Then
+'		Dim loadedText As String = File.ReadString(File.DirInternal, FileName1) ' Read text from file
+'		'Log(loadedText) ' Display the loaded text
+'		' Count occurrences of "Overlap"
+'		Dim count As Int = 0
+'		Dim index As Int = 0
+'    
+'		Do While index > -1
+'			index = loadedText.IndexOf2("Overlap", index)
+'			If index <> -1 Then
+'				count = count + 1
+'				index = index + 1 ' Move past the last found index
+'			End If
+'		Loop
+'		
+'		Log("The word 'Overlap' appears: " & count & " times.")
+'		
+'	Else
+'		ToastMessageShow("File does not exist!", True)
+'	End If
+'End Sub
+
+
+
+Sub Activity_Resume
+	r.CheckAndRequest("android.permission.WRITE_EXTERNAL_STORAGE")
+	r.CheckAndRequest("android.permission.READ_EXTERNAL_STORAGE")
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub Button1_Click
+	xui.MsgboxAsync("Hello world!", "B4X")
+End Sub
+
+Private Sub ListControllers_ItemClick (Position As Int, Value As Object)
+	
+	Log(Value.As(String))
+	Try
+		For Each Item In ListC
+			If Item == Value.As(String) Then
+				Log("Existe")
+				StartActivity(Value)
+				Return
+			Else
+				Log("No Existe")
+			End If
+		Next
+	Catch
+		Log("Actividad Inexistente")
+		ToastMessageShow("Actividad Inexistente", True)
+	End Try
+	
+	
+End Sub
