@@ -357,7 +357,7 @@ Sub Activity_Create(FirstTime As Boolean)
 '	pnlSlideGraph.Height = 400dip
 '	pnlSlideGraph.Left = pnlSlideGraph.Width ' Start off-screen
 '	Activity.AddView(pnlSlideGraph, pnlSlideGraph.Left, 0, pnlSlideGraph.Width, pnlSlideGraph.Height)
-	pnlSlideGraph.Left = pnlSlideGraph.Width
+	pnlSlideGraph.Left = pnlSlideGraph.Width + 50
 	
 	' Initialize the line data
 	'LineChart1.Initialize(Me, "")
