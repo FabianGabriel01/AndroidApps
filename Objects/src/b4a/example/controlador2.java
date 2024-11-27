@@ -34,7 +34,7 @@ public class controlador2 extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.controlador2");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.controlador2");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,14 +335,7 @@ public class controlador2 extends Activity implements B4AActivity{
             
     }
 
-public anywheresoftware.b4a.keywords.Common __c = null;
-public b4a.example.conversion _conversion = null;
-public b4a.example.modbusservice _modbusservice = null;
-public b4a.example.dateutils _dateutils = null;
-public b4a.example.main _main = null;
-public b4a.example.starter _starter = null;
-public b4a.example.controlador1 _controlador1 = null;
-public b4a.example.controlador3 _controlador3 = null;
+
 
 public static void initializeProcessGlobals() {
              try {
@@ -351,45 +344,66 @@ public static void initializeProcessGlobals() {
                 throw new RuntimeException(e);
             }
 }
+public anywheresoftware.b4a.keywords.Common __c = null;
+public b4a.example.conversion _conversion = null;
+public b4a.example.modbusservice _modbusservice = null;
+public b4a.example.dateutils _dateutils = null;
+public b4a.example.main _main = null;
+public b4a.example.starter _starter = null;
+public b4a.example.controlador1 _controlador1 = null;
+public b4a.example.controlador3 _controlador3 = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 18;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 22;BA.debugLine="End Sub";
+RDebugUtils.currentModule="controlador2";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=3407872;
+ //BA.debugLineNum = 3407872;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=3407876;
+ //BA.debugLineNum = 3407876;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 32;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 33;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+RDebugUtils.currentModule="controlador2";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
+	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
+RDebugUtils.currentLine=3604480;
+ //BA.debugLineNum = 3604480;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+RDebugUtils.currentLine=3604481;
+ //BA.debugLineNum = 3604481;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 34;BA.debugLine="Log(\"BACK PRESSED\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("43538946","BACK PRESSED",0);
- //BA.debugLineNum = 35;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=3604482;
+ //BA.debugLineNum = 3604482;BA.debugLine="Log(\"BACK PRESSED\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("23604482","BACK PRESSED",0);
+RDebugUtils.currentLine=3604483;
+ //BA.debugLineNum = 3604483;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 36;BA.debugLine="StartActivity(Main)";
+RDebugUtils.currentLine=3604484;
+ //BA.debugLineNum = 3604484;BA.debugLine="StartActivity(Main)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
  };
- //BA.debugLineNum = 38;BA.debugLine="Return True";
+RDebugUtils.currentLine=3604486;
+ //BA.debugLineNum = 3604486;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
- //BA.debugLineNum = 40;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3604488;
+ //BA.debugLineNum = 3604488;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 30;BA.debugLine="End Sub";
+RDebugUtils.currentModule="controlador2";
+RDebugUtils.currentLine=3538944;
+ //BA.debugLineNum = 3538944;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=3538946;
+ //BA.debugLineNum = 3538946;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 26;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="End Sub";
-return "";
-}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+RDebugUtils.currentModule="controlador2";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=3473408;
+ //BA.debugLineNum = 3473408;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=3473410;
+ //BA.debugLineNum = 3473410;BA.debugLine="End Sub";
 return "";
 }
 }
